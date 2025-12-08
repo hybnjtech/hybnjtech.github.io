@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>胡彦博 Yanbo Hu - Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --main-color: #0b7285;
+      --text-color: #333;
+      --bg-color: #f7f7f7;
+      --card-bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(120deg, #0b7285, #1971c2);
+      color: #fff;
+      padding: 32px 16px 24px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px 32px;
+    }
+    .title-cn {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .title-en {
+      font-size: 18px;
+      opacity: 0.9;
+      margin: 0 0 12px;
+    }
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      margin: 0 0 4px;
+    }
+    .tags {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.1);
+    }
+    main {
+      margin-top: -24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+    .card h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--main-color);
+      border-left: 3px solid var(--main-color);
+      padding-left: 8px;
+    }
+    .card p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+    .list {
+      padding-left: 18px;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+    .list li {
+      margin-bottom: 4px;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+    }
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      padding: 12px 0 4px;
+    }
+    @media (max-width: 720px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding-top: 24px;
+      }
+      .title-cn {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title-cn">胡彦博</h1>
+      <h2 class="title-en">Yanbo Hu</h2>
+      <p class="subtitle">副教授 · 硕士生导师</p>
+      <p class="subtitle">南京工业大学 交通运输工程学院 · 地质工程系</p>
+      <div class="tags">
+        <span class="tag">矿山水害防治</span>
+        <span class="tag">DAS 分布式光纤监测</span>
+        <span class="tag">工程地质 / 水文地质</span>
+        <span class="tag">隧道与采空塌陷区治理</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="two-column card">
+      <div>
+        <h2>About / 个人简介</h2>
+        <p>
+          男，工学博士，中共党员。毕业于中国矿业大学地质资源与地质工程专业，
+          现任南京工业大学交通运输工程学院地质工程系主任，主要从事
+          矿山水防控与资源化利用、DAS 地震波场与分布式光纤监测、
+          隧道工程病害预警及采空塌陷区治理等方面的教学与科研工作。
+        </p>
+      </div>
+      <div>
+        <h2>Contact / 联系方式</h2>
+        <p>E-mail: <a href="mailto:hyb@njtech.edu.cn">hyb@njtech.edu.cn</a></p>
+        <p>Tel: 17826088119</p>
+        <p>ORCID: 0000-0002-2251-6353</p>
+        <p>GitHub: <a href="https://github.com/hybnjtech" target="_blank">github.com/hybnjtech</a></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Research Interests / 研究方向</h2>
+      <ul class="list">
+        <li>DAS 地震波场理论与分布式光纤在地下工程中的应用</li>
+        <li>矿山水防控与高承压水突水机理及防治技术</li>
+        <li>隧道工程病害预警防控与采空塌陷区治理</li>
+        <li>地下水–地表水–工程耦合系统及灾害演化</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Selected Projects / 部分主持项目</h2>
+      <ul class="list">
+        <li>省自然科学基金重点项目：煤层开采扰动烧变岩水害致灾机理及防治研究</li>
+        <li>中国博士后科学基金面上项目：含水层超前区域治理效果评价机制研究</li>
+        <li>中国黄金集团：超高承压水涌突致灾机理及防治研究总承包（EPC）</li>
+        <li>淮北矿务集团：隐伏陷落柱构造突水致灾机理及快速查治关键技术研究</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Selected Publications / 代表性论文</h2>
+      <ul class="list">
+        <li>Hu, Y.B., Li, W.P., et al. Application of Brillouin Optical Time Domain Reflection Technology for Monitoring Deformation and Failure of the Coal Seam Floor Rock Mass in Deep Underground Mines. <em>Mine Water and the Environment</em>.</li>
+        <li>Hu, Y.B., Li, W.P., et al. Temporal and spatial evolution characteristics of fracture distribution of floor strata in deep coal seam mining. <em>Engineering Failure Analysis</em>.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Teaching / 教学</h2>
+      <ul class="list">
+        <li>工程地质学（本科）</li>
+        <li>环境岩土工程（本科）</li>
+        <li>岩土工程勘察（本科）</li>
+        <li>环境工程地质学、地质工程理论（研究生）</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Yanbo Hu · Hosted on GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

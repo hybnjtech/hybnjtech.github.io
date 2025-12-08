@@ -134,8 +134,27 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 16px;
-      min-width: 140px;
+      gap: 14px;
+      min-width: 150px;
+    }
+
+    /* Avatar */
+
+    .avatar-wrapper {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      padding: 3px;
+      background: radial-gradient(circle at 30% 0, #ffffff, rgba(255, 255, 255, 0.1));
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      display: block;
     }
 
     .lang-toggle {
@@ -333,6 +352,44 @@
       margin-top: 4px;
     }
 
+    /* Galleries */
+
+    .book-gallery,
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .book-item,
+    .project-item {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .book-item img,
+    .project-item img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 200px;
+    }
+
+    .project-item img {
+      max-height: 160px;
+    }
+
+    .book-caption,
+    .project-caption {
+      padding: 6px 10px 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     footer {
       max-width: var(--max-width);
       margin: 0 auto 26px;
@@ -430,6 +487,11 @@
       </div>
 
       <div class="hero-side">
+        <div class="avatar-wrapper">
+          <!-- 换成你的真实头像文件路径 -->
+          <img src="assets/avatar-yb.jpg" alt="Portrait of Yanbo Hu" class="avatar" />
+        </div>
+
         <div class="lang-toggle" aria-label="Language switch">
           <button class="lang-btn active" data-lang-target="en">EN</button>
           <button class="lang-btn" data-lang-target="zh">中 / ZH</button>
@@ -599,14 +661,40 @@
 
           <li class="lang-en">
             Virtual simulation lab:
-            <em>In-situ testing · Standard Penetration Test virtual experiment</em>, 2021–2025 (PI).
+            <em>In-situ testing – Standard Penetration Test virtual experiment</em>, 2021–2025 (PI).
           </li>
           <li class="lang-zh">
             实验教学项目：<em>原位测试之标准贯入虚拟仿真实验虚拟仿真</em>，2021–2025（主持）。
           </li>
         </ul>
-        <p class="muted lang-en">More industry-university cooperation projects are available in the full CV.</p>
-        <p class="muted lang-zh">更多企业合作与科研项目详见完整简历。</p>
+
+        <!-- 项目照片画廊 -->
+        <div class="project-gallery">
+          <figure class="project-item">
+            <img src="assets/project-mine-water.jpg" alt="Mine water control project site" />
+            <figcaption class="project-caption">
+              <span class="lang-en">Field investigation on confined water hazards in deep coal seams.</span>
+              <span class="lang-zh">深部煤层承压水害现场调查与试验。</span>
+            </figcaption>
+          </figure>
+          <figure class="project-item">
+            <img src="assets/project-das-field.jpg" alt="DAS experimental layout in campus or mine" />
+            <figcaption class="project-caption">
+              <span class="lang-en">DAS experimental layout for deep structure imaging.</span>
+              <span class="lang-zh">DAS 深部结构成像实验场布设。</span>
+            </figcaption>
+          </figure>
+          <figure class="project-item">
+            <img src="assets/project-tunnel.jpg" alt="Tunnel hazard monitoring and mitigation" />
+            <figcaption class="project-caption">
+              <span class="lang-en">Monitoring and mitigation of tunnel engineering diseases.</span>
+              <span class="lang-zh">隧道工程病害监测与治理工程。</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="muted lang-en" style="margin-top:8px;">More industry–university cooperation projects are available in the full CV.</p>
+        <p class="muted lang-zh" style="margin-top:8px;">更多企业合作与科研项目详见完整简历。</p>
       </article>
 
       <!-- Publications -->
@@ -834,7 +922,7 @@
         </ul>
       </article>
 
-      <!-- Patents & Books -->
+      <!-- Patents & Books + Covers -->
       <article class="card">
         <div class="card-header">
           <div class="card-title">
@@ -844,7 +932,36 @@
           </div>
         </div>
 
-        <p class="muted lang-en">Authorized invention patents</p>
+        <!-- 书封面画廊 -->
+        <div class="book-gallery">
+          <figure class="book-item">
+            <img src="assets/book-deep-mine-water.jpg" alt="Book cover - Mechanism and Control Technology of Confined Water Hazards in Deep Coal Seam Mining" />
+            <figcaption class="book-caption">
+              <span class="lang-en">
+                Monograph: <em>Mechanism and Control Technology of Confined Water Hazards in Deep Coal Seam Mining</em>,
+                China Petrochemical Press, 2022.
+              </span>
+              <span class="lang-zh">
+                专著：《深部煤层开采承压水害致灾机理及防治技术》，中国石化出版社，2022。
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="book-item">
+            <img src="assets/textbook-engineering-geology.jpg" alt="Textbook cover - Engineering Geology (5th Edition)" />
+            <figcaption class="book-caption">
+              <span class="lang-en">
+                Co-authored textbook: <em>Engineering Geology (5th Edition)</em>,
+                Civil Engineering Series, Wuhan University of Technology Press, 2024.
+              </span>
+              <span class="lang-zh">
+                参编教材：《工程地质》第 5 版，普通高等学校土木工程专业新编系列教材，武汉理工大学出版社，2024。
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="muted lang-en" style="margin-top:10px;">Authorized invention patents</p>
         <ul>
           <li class="lang-en">
             Dynamic monitoring method for spatio-temporal evolution of floor rock fracture distribution in deep coal mining
@@ -882,23 +999,6 @@
         <p class="muted lang-zh">软件著作：</p>
         <ul class="lang-zh">
           <li>原位测试之标准贯入虚拟仿真实验软件 V1.0（登记号：2024SR0832633）。</li>
-        </ul>
-
-        <p class="muted lang-en">Books &amp; textbooks</p>
-        <ul>
-          <li class="lang-en">
-            Hu, Y.B. 2022. <em>Mechanism and Control Technology of Confined Water Hazards in Deep Coal Seam Mining</em>.
-            China Petrochemical Press, Beijing. (in Chinese)
-          </li>
-          <li class="lang-en">
-            Co-author of textbook <em>Engineering Geology (5th Edition)</em>,
-            Civil Engineering Series for Colleges and Universities, Wuhan University of Technology Press, 2024.
-          </li>
-        </ul>
-        <p class="muted lang-zh">教材与著作：</p>
-        <ul class="lang-zh">
-          <li>《深部煤层开采承压水害致灾机理及防治技术》，中国石化出版社，2022。</li>
-          <li>参编教材《工程地质》第 5 版，普通高等学校土木工程专业新编系列教材，武汉理工大学出版社，2024。</li>
         </ul>
       </article>
     </section>

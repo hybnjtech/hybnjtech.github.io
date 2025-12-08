@@ -1,203 +1,926 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>胡彦博 Yanbo Hu - Personal Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Yanbo Hu | Academic Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Academic homepage of Dr. Yanbo Hu, Associate Professor at Nanjing Tech University. Research on mine water control, DAS seismology, engineering geology and tunnel hazard prevention." />
   <style>
     :root {
-      --main-color: #0b7285;
-      --text-color: #333;
-      --bg-color: #f7f7f7;
+      --primary: #0b7285;
+      --primary-soft: #e3fafc;
+      --accent: #fab005;
+      --bg: #f5f7fb;
       --card-bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --transition-fast: 0.2s ease;
+      --max-width: 1120px;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
-      color: var(--text-color);
-      background: var(--bg-color);
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top left, #e0f7ff 0, #f5f7fb 45%, #f9fafb 100%);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
-      background: linear-gradient(120deg, #0b7285, #1971c2);
-      color: #fff;
-      padding: 32px 16px 24px;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 16px 32px;
-    }
-    .title-cn {
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0 0 4px;
-    }
-    .title-en {
-      font-size: 18px;
-      opacity: 0.9;
-      margin: 0 0 12px;
-    }
-    .subtitle {
-      font-size: 14px;
-      opacity: 0.9;
-      margin: 0 0 4px;
-    }
-    .tags {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .tag {
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.1);
-    }
-    main {
-      margin-top: -24px;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px 18px;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-    }
-    .card h2 {
-      font-size: 18px;
-      margin: 0 0 10px;
-      color: var(--main-color);
-      border-left: 3px solid var(--main-color);
-      padding-left: 8px;
-    }
-    .card p {
-      margin: 4px 0;
-      font-size: 14px;
-    }
-    .list {
-      padding-left: 18px;
-      margin: 6px 0;
-      font-size: 14px;
-    }
-    .list li {
-      margin-bottom: 4px;
-    }
-    .two-column {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 16px;
-    }
+
     a {
-      color: var(--main-color);
+      color: var(--primary);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      padding: 12px 0 4px;
+
+    /* HERO */
+
+    .hero {
+      padding: 26px 18px 40px;
+      background: linear-gradient(130deg, #0b7285, #1971c2);
+      color: #fff;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
     }
-    @media (max-width: 720px) {
-      .two-column {
-        grid-template-columns: 1fr;
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .hero-main {
+      flex: 1 1 0;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .badge {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-name {
+      font-size: clamp(30px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin: 4px 0 6px;
+    }
+
+    .hero-name-sub {
+      font-size: 18px;
+      opacity: 0.92;
+    }
+
+    .hero-title {
+      font-size: 15px;
+      opacity: 0.88;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-contact {
+      margin-top: 16px;
+      font-size: 13px;
+      opacity: 0.95;
+    }
+
+    .hero-contact div {
+      margin-bottom: 4px;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+      min-width: 140px;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    .lang-btn {
+      border: none;
+      outline: none;
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.9);
+      transition: background var(--transition-fast), color var(--transition-fast),
+        transform var(--transition-fast);
+    }
+
+    .lang-btn.active {
+      background: #fff;
+      color: #0b7285;
+      transform: translateY(-0.5px);
+    }
+
+    .hero-quicklinks {
+      font-size: 12px;
+      text-align: right;
+      opacity: 0.94;
+    }
+
+    .hero-quicklinks a {
+      color: #e3fafc;
+    }
+
+    /* LAYOUT */
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 18px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.4fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      header {
-        padding-top: 24px;
+      .hero-side {
+        align-items: flex-start;
       }
-      .title-cn {
-        font-size: 22px;
+      .page {
+        grid-template-columns: minmax(0, 1fr);
       }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-inline: 14px;
+      }
+      .page {
+        padding-inline: 14px;
+      }
+    }
+
+    /* CARDS */
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.07);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(11, 114, 133, 0.06), transparent 55%);
+      pointer-events: none;
+    }
+
+    .card + .card {
+      margin-top: 14px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      gap: 12px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(250, 176, 5, 0.22);
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    p {
+      margin: 4px 0 8px;
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    ul {
+      margin: 6px 0 4px;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+
+    li + li {
+      margin-top: 3px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    .two-col-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4px 18px;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .two-col-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pub-item + .pub-item {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .pub-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .pub-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto 26px;
+      padding: 10px 18px 0;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    /* LANGUAGE VISIBILITY */
+
+    .lang-zh,
+    .lang-en {
+      transition: opacity 0.15s ease;
+    }
+
+    html[data-lang="en"] .lang-zh {
+      display: none;
+    }
+
+    html[data-lang="zh"] .lang-en {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="title-cn">胡彦博</h1>
-      <h2 class="title-en">Yanbo Hu</h2>
-      <p class="subtitle">副教授 · 硕士生导师</p>
-      <p class="subtitle">NJTECH 交通运输工程学院 · 地质工程系</p>
-      <div class="tags">
-        <span class="tag">矿山水害防治</span>
-        <span class="tag">DAS 分布式光纤监测</span>
-        <span class="tag">工程地质 / 水文地质</span>
-        <span class="tag">隧道与采空塌陷区治理</span>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="badge-row">
+          <span class="badge">
+            <span class="lang-en">Associate Professor · Master Supervisor</span>
+            <span class="lang-zh">副教授 · 硕士生导师</span>
+          </span>
+          <span class="badge">
+            <span class="lang-en">Department Head, Geological Engineering</span>
+            <span class="lang-zh">地质工程系主任</span>
+          </span>
+          <span class="badge">
+            <span class="lang-en">School of Transportation Engineering, Nanjing Tech University</span>
+            <span class="lang-zh">南京工业大学交通运输工程学院</span>
+          </span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="lang-en">Yanbo Hu</span>
+          <span class="lang-zh">胡彦博</span>
+        </h1>
+        <div class="hero-name-sub lang-en">Mine Water &amp; DAS · Engineering Geology · Tunnel Hazard Prevention</div>
+        <div class="hero-name-sub lang-zh">矿山水防控与资源化 · DAS 地震波场 · 工程地质与隧道病害防控</div>
+
+        <div class="hero-title">
+          <span class="lang-en">
+            Ph.D. in Geological Resources and Geological Engineering, China University of Mining and Technology ·
+            Postdoctoral fellow jointly trained by China University of Mining and Technology (Beijing) and China Energy.
+          </span>
+          <span class="lang-zh">
+            中国矿业大学采矿工程学士、地质资源与地质工程博士；中国矿业大学（北京）与国家能源集团联合培养地质资源与地质工程博士后。
+          </span>
+        </div>
+
+        <div class="hero-tags">
+          <span class="hero-tag">Mine Water Control</span>
+          <span class="hero-tag">DAS Seismology</span>
+          <span class="hero-tag">Hydrogeology</span>
+          <span class="hero-tag">Geo-Hazards</span>
+          <span class="hero-tag">Tunnel &amp; Subsidence</span>
+        </div>
+
+        <div class="hero-contact">
+          <div>
+            <strong>E-mail:</strong>
+            <a href="mailto:hyb@njtech.edu.cn">hyb@njtech.edu.cn</a>
+          </div>
+          <div>
+            <strong class="lang-en">Address:</strong>
+            <strong class="lang-zh">通讯地址：</strong>
+            <span class="lang-en">
+              Room 425, Tiangong Building, Nanjing Tech University, 30 Puzhu South Road,
+              Jiangbei New Area, Nanjing, Jiangsu, 211816, China
+            </span>
+            <span class="lang-zh">
+              江苏省南京市江北新区浦珠南路 30 号南京工业大学天工楼 425 室，邮编 211816
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="lang-toggle" aria-label="Language switch">
+          <button class="lang-btn active" data-lang-target="en">EN</button>
+          <button class="lang-btn" data-lang-target="zh">中 / ZH</button>
+        </div>
+        <div class="hero-quicklinks">
+          <div>
+            <a href="#about">About</a> ·
+            <a href="#research">Research</a> ·
+            <a href="#projects">Projects</a> ·
+            <a href="#publications">Publications</a> ·
+            <a href="#teaching">Teaching</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="two-column card">
-      <div>
-        <h2>About / 个人简介</h2>
-        <p>
-          男，工学博士，中共党员。毕业于中国矿业大学地质资源与地质工程专业，
-          现任南京工业大学交通运输工程学院地质工程系主任，主要从事
-          矿山水防控与资源化利用、DAS 地震波场与分布式光纤监测、
-          隧道工程病害预警及采空塌陷区治理等方面的教学与科研工作。
+  <!-- MAIN -->
+  <main class="page">
+    <!-- LEFT COLUMN -->
+    <section>
+      <!-- About -->
+      <article class="card" id="about">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">About</span>
+            <span class="lang-zh">个人简介</span>
+          </div>
+        </div>
+        <p class="lang-en">
+          Yanbo Hu was born in 1986 in Runan, Henan Province. He is a member of the Communist Party of China
+          and currently serves as Associate Professor and Head of the Department of Geological Engineering
+          at the School of Transportation Engineering, Nanjing Tech University.
+          His industrial experience includes positions such as technician, chief engineer, production vice general manager,
+          safety vice general manager and acting general manager in mining construction projects at Xuzhou Mining Group.
+          From 2021 to 2024 he served as Secretary of the First CPC Teaching Faculty Branch and Deputy Director of
+          the Discipline Development Office of the School, and from 2022 to 2023 he was Vice General Manager of
+          Shandong Energy Group Luxi Mining Technology Co., Ltd.
         </p>
-      </div>
-      <div>
-        <h2>Contact / 联系方式</h2>
-        <p>E-mail: <a href="mailto:hyb@njtech.edu.cn">hyb@njtech.edu.cn</a></p>
-        <p>Tel: 17826088119</p>
-        <p>ORCID: 0000-0002-2251-6353</p>
-        <p>GitHub: <a href="https://github.com/hybnjtech" target="_blank">github.com/hybnjtech</a></p>
-      </div>
+        <p class="lang-zh">
+          胡彦博，汉族，河南汝南人，中共党员，1986 年出生。现任南京工业大学交通运输工程学院地质工程系主任，教学科研型专任教师，副教授、硕士生导师。曾在徐州矿务集团矿建项目担任技术员、技术主管、总工程师、生产副总经理、安全副总经理、副总经理（主持工作）；2021–2024 年任南京工业大学交通运输工程学院教师第一党支部书记、学院学科建设办副主任；2022–2023 年兼任山东能源集团鲁西矿业科技副总。
+        </p>
+        <p class="tagline lang-en">
+          Background: Mining Engineering (B.Eng.) &amp; Geological Resources and Geological Engineering (Ph.D.),
+          China University of Mining and Technology; Postdoctoral research jointly with China Energy.
+        </p>
+        <p class="tagline lang-zh">
+          教育背景：采矿工程学士、地质资源与地质工程博士（中国矿业大学）；中国矿业大学（北京）与国家能源集团联合培养博士后。
+        </p>
+      </article>
+
+      <!-- Research Interests -->
+      <article class="card" id="research">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Research Areas</span>
+            <span class="lang-zh">研究领域</span>
+          </div>
+        </div>
+        <ul>
+          <li class="lang-en">DAS wavefield theory and applications for deep subsurface imaging and monitoring.</li>
+          <li class="lang-zh">DAS 地震波场理论及其在深部结构成像与监测中的应用。</li>
+
+          <li class="lang-en">Mine water hazard control and resource utilization in deep mining environments.</li>
+          <li class="lang-zh">矿山水防控与资源化利用理论与技术。</li>
+
+          <li class="lang-en">Early warning and mitigation of tunnel engineering diseases and goaf subsidence control.</li>
+          <li class="lang-zh">隧道工程病害预警防控与采空塌陷区治理。</li>
+        </ul>
+
+        <div class="pill-row">
+          <span class="pill">DAS Seismology</span>
+          <span class="pill">Mine Water Control</span>
+          <span class="pill">Hydrogeology</span>
+          <span class="pill">Tunnel Hazards</span>
+          <span class="pill">Goaf Subsidence</span>
+        </div>
+      </article>
+
+      <!-- Projects -->
+      <article class="card" id="projects">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Selected Research &amp; Teaching Projects</span>
+            <span class="lang-zh">主要科研与教改项目（节选）</span>
+          </div>
+          <div class="card-subtitle lang-en">PI unless otherwise noted</div>
+          <div class="card-subtitle lang-zh">除特别说明外为主持</div>
+        </div>
+        <ul>
+          <li class="lang-en">
+            National Key R&amp;D Program:
+            <em>Key technologies for safe deep storage of mine water-bearing bodies</em> (participant).
+          </li>
+          <li class="lang-zh">
+            国家重点研发计划：<em>煤矿突水体安全深贮关键技术研发与应用示范</em>（参与）。
+          </li>
+
+          <li class="lang-en">
+            NSFC Key Project:
+            <em>Mechanism and control of water inrush from Jurassic coal measures overlain by N<sub>2</sub> laterite</em> (participant).
+          </li>
+          <li class="lang-zh">
+            国家自然科学基金重点项目：<em>侏罗系煤层上覆 N<sub>2</sub> 红土采动破坏突水机理与防控研究</em>（参与）。
+          </li>
+
+          <li class="lang-en">
+            Jiangsu Natural Science Foundation – Key Project:
+            <em>Mechanism and control of water hazards in pyrometamorphic rocks disturbed by coal mining</em>,
+            2025.08–2027.08 (PI).
+          </li>
+          <li class="lang-zh">
+            省自然科学基金重点项目：<em>煤层开采扰动烧变岩水害致灾机理及防治研究</em>，2025.08–2027.08（主持）。
+          </li>
+
+          <li class="lang-en">
+            Jiangsu Natural Science Foundation – General Program:
+            <em>Far-distance delayed water inrush mechanism of composite “入-type” faults under mining disturbance</em>,
+            2022.07–2025.06 (PI).
+          </li>
+          <li class="lang-zh">
+            省自然科学基金面上项目：<em>采动“入字型”多级组合断层远距离滞后突水机理研究</em>，2022.07–2025.06（主持）。
+          </li>
+
+          <li class="lang-en">
+            China Postdoctoral Science Foundation – General Program:
+            <em>Evaluation mechanism of advanced regional treatment of aquifers</em>, 2025.01–2026.12 (PI).
+          </li>
+          <li class="lang-zh">
+            中国博士后科学基金面上项目：<em>含水层超前区域治理效果评价机制研究</em>，2025.01–2026.12（主持）。
+          </li>
+
+          <li class="lang-en">
+            China National Gold Group – Shaling Gold Mine:
+            <em>Mechanism and control of ultra-high confined water inrush (EPC)</em>, 2023.12–2025.12 (PI).
+          </li>
+          <li class="lang-zh">
+            中国黄金集团纱岭金矿：<em>超高承压水涌突致灾机理及防治研究总承包（EPC）项目</em>，2023.12–2025.12（主持）。
+          </li>
+
+          <li class="lang-en">
+            Lu’an Group – Sima Coal Mine:
+            <em>Water inrush risk assessment and control technologies for lower-group coal seams</em>, 2024.01–2025.12 (PI).
+          </li>
+          <li class="lang-zh">
+            潞安集团司马煤业：<em>下组煤开采突水危险性评价及防治技术研究</em>，2024.01–2025.12（主持）。
+          </li>
+
+          <li class="lang-en">
+            Jiangsu Geological Engineering Investigation Institute:
+            <em>Mechanism of ecological water-level restoration in subsidence areas</em>, 2022–2024 (PI).
+          </li>
+          <li class="lang-zh">
+            江苏省地质工程勘察院：<em>塌陷区生态水位恢复机理研究</em>，2022–2024（主持）。
+          </li>
+
+          <li class="lang-en">
+            Teaching reform project:
+            <em>Improving environmental geotechnical engineering education using Virtual Reality</em>, 2021–2022 (PI).
+          </li>
+          <li class="lang-zh">
+            教育教改项目：<em>基于 Virtual Reality 技术的环境岩土工程教学质量提升路径研究</em>，2021–2022（主持）。
+          </li>
+
+          <li class="lang-en">
+            Virtual simulation lab:
+            <em>In-situ testing · Standard Penetration Test virtual experiment</em>, 2021–2025 (PI).
+          </li>
+          <li class="lang-zh">
+            实验教学项目：<em>原位测试之标准贯入虚拟仿真实验虚拟仿真</em>，2021–2025（主持）。
+          </li>
+        </ul>
+        <p class="muted lang-en">More industry-university cooperation projects are available in the full CV.</p>
+        <p class="muted lang-zh">更多企业合作与科研项目详见完整简历。</p>
+      </article>
+
+      <!-- Publications -->
+      <article class="card" id="publications">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Representative Publications</span>
+            <span class="lang-zh">代表性论文</span>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Chen, X.M., Zheng, G., Li, X.W., Wang, W.T. 2022.
+            <span class="lang-en">
+              Application of Brillouin Optical Time Domain Reflection Technology for Monitoring Deformation and
+              Failure of the Coal Seam Floor Rock Mass in Deep Underground Mines.
+            </span>
+            <span class="lang-zh">
+              Application of Brillouin Optical Time Domain Reflection Technology for Monitoring Deformation and
+              Failure of the Coal Seam Floor Rock Mass in Deep Underground Mines.
+            </span>
+          </div>
+          <div class="pub-meta">Mine Water and the Environment (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Chen, X.M., et al. 2021.
+            Temporal and spatial evolution characteristics of fracture distribution of floor strata in deep coal seam mining.
+          </div>
+          <div class="pub-meta">Engineering Failure Analysis (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Liu, S.L., et al. 2021.
+            Prediction of Floor Failure Depth in Deep Coal Mines by Regression Analysis of the Multi-factor Influence Index.
+          </div>
+          <div class="pub-meta">Mine Water and the Environment (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Wang, Q.Q., Liu, S.L. 2020.
+            Vertical Shaft Excavation Shaping and Surrounding Rock Control Technology Under the Coupling Action of High Ground Stress and Fracture Formation.
+          </div>
+          <div class="pub-meta">Journal of Performance of Constructed Facilities (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Wang, Q.Q., Liu, S.L., Wang, Z.K. 2019.
+            Evolution of floor water inrush from a structural fractured zone with confined water.
+          </div>
+          <div class="pub-meta">Mine Water and the Environment (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Wang, Q.Q., Liu, S.L., Wang, Z.K. 2019.
+            Evaluation of water inrush risk from coal seam floors with an AHP–EWM algorithm and GIS.
+          </div>
+          <div class="pub-meta">Environmental Earth Sciences (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Wang, Q.Q., Liu, S.L., Wang, Z.K. 2019.
+            Study on failure depth of coal seam floor in deep mining.
+          </div>
+          <div class="pub-meta">Environmental Earth Sciences (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Liu, S.L., Wang, Q.Q., Wang, Z.K. 2019.
+            Risk assessment of water inrush from aquifers underlying the Qiuji coal mine in China.
+          </div>
+          <div class="pub-meta">Arabian Journal of Geosciences (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Li, W.P., Wang, Q.Q., Chen, X.M., Zheng, G. 2022.
+            Evaluation Method of Water Hazard Control Effect of Coal Seam Floor in Deep Mining: Sequence Verification Evaluation.
+          </div>
+          <div class="pub-meta">Geofluids (SCI)</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Hu, Y.B., Xu, J.Z., Wang, Q.Q., Li, J.Y., Xu, Q.G., Guo, S.S. 2023.
+            Study on Prevention and Control of Confined Water Hazard in Deep Resource Exploitation — Scientific basis of “GCD-D” design.
+          </div>
+          <div class="pub-meta">Geofluids (SCI)</div>
+        </div>
+
+        <p class="muted lang-en" style="margin-top:10px;">A full publication list is available upon request.</p>
+        <p class="muted lang-zh" style="margin-top:10px;">完整论文清单可根据需要提供。</p>
+      </article>
     </section>
 
-    <section class="card">
-      <h2>Research Interests / 研究方向</h2>
-      <ul class="list">
-        <li>DAS 地震波场理论与分布式光纤在地下工程中的应用</li>
-        <li>矿山水防控与高承压水突水机理及防治技术</li>
-        <li>隧道工程病害预警防控与采空塌陷区治理</li>
-        <li>地下水–地表水–工程耦合系统及灾害演化</li>
-      </ul>
-    </section>
+    <!-- RIGHT COLUMN -->
+    <section>
+      <!-- Teaching -->
+      <article class="card" id="teaching">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Teaching</span>
+            <span class="lang-zh">教学情况</span>
+          </div>
+        </div>
+        <p class="muted lang-en">Undergraduate courses</p>
+        <div class="two-col-list">
+          <div>Engineering Geology</div>
+          <div>Environmental Geotechnical Engineering</div>
+          <div>Geotechnical Investigation</div>
+        </div>
+        <p class="muted lang-zh" style="margin-top:6px;">本科生课程：</p>
+        <ul>
+          <li>工程地质学</li>
+          <li>环境岩土工程</li>
+          <li>岩土工程勘察</li>
+        </ul>
 
-    <section class="card">
-      <h2>Selected Projects / 部分主持项目</h2>
-      <ul class="list">
-        <li>省自然科学基金重点项目：煤层开采扰动烧变岩水害致灾机理及防治研究</li>
-        <li>中国博士后科学基金面上项目：含水层超前区域治理效果评价机制研究</li>
-        <li>中国黄金集团：超高承压水涌突致灾机理及防治研究总承包（EPC）</li>
-        <li>淮北矿务集团：隐伏陷落柱构造突水致灾机理及快速查治关键技术研究</li>
-      </ul>
-    </section>
+        <p class="muted lang-en" style="margin-top:6px;">Graduate &amp; training courses</p>
+        <ul>
+          <li class="lang-en">Geological Engineering Theory</li>
+          <li class="lang-en">Environmental Engineering Geology</li>
+          <li class="lang-en">Theory and Research on Mine Water Hazard Prevention (industry training course)</li>
 
-    <section class="card">
-      <h2>Selected Publications / 代表性论文</h2>
-      <ul class="list">
-        <li>Hu, Y.B., Li, W.P., et al. Application of Brillouin Optical Time Domain Reflection Technology for Monitoring Deformation and Failure of the Coal Seam Floor Rock Mass in Deep Underground Mines. <em>Mine Water and the Environment</em>.</li>
-        <li>Hu, Y.B., Li, W.P., et al. Temporal and spatial evolution characteristics of fracture distribution of floor strata in deep coal seam mining. <em>Engineering Failure Analysis</em>.</li>
-      </ul>
-    </section>
+          <li class="lang-zh">地质工程理论</li>
+          <li class="lang-zh">环境工程地质</li>
+          <li class="lang-zh">矿井水害防治理论与研究（企业培训课程）</li>
+        </ul>
+      </article>
 
-    <section class="card">
-      <h2>Teaching / 教学</h2>
-      <ul class="list">
-        <li>工程地质学（本科）</li>
-        <li>环境岩土工程（本科）</li>
-        <li>岩土工程勘察（本科）</li>
-        <li>环境工程地质学、地质工程理论（研究生）</li>
-      </ul>
+      <!-- Supervision -->
+      <article class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Supervision &amp; Recruitment</span>
+            <span class="lang-zh">研究生招生方向</span>
+          </div>
+        </div>
+        <p class="lang-en">
+          I recruit master students in:
+        </p>
+        <ul>
+          <li class="lang-en">DAS-based deep structure imaging and monitoring</li>
+          <li class="lang-en">Geological engineering and rock/soil drilling and excavation</li>
+          <li class="lang-en">Environmental geotechnical engineering</li>
+          <li class="lang-en">Mine water hazard prevention and control</li>
+        </ul>
+        <p class="lang-zh">
+          目前主要招收以下方向研究生：
+        </p>
+        <ul>
+          <li class="lang-zh">DAS 深地结构成像与监测</li>
+          <li class="lang-zh">地质工程与岩土钻掘工程</li>
+          <li class="lang-zh">环境岩土工程</li>
+          <li class="lang-zh">矿井水害防治</li>
+        </ul>
+        <p class="muted lang-en">
+          Prospective students with backgrounds in geology, mining, civil or related disciplines are welcome to contact me by e-mail.
+        </p>
+        <p class="muted lang-zh">
+          欢迎具有地质、采矿、土木等相关专业背景、对深部资源开发与环境保护感兴趣的同学邮件联系报考。
+        </p>
+      </article>
+
+      <!-- Service & Honors -->
+      <article class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Academic Service &amp; Honors</span>
+            <span class="lang-zh">学术兼职与荣誉</span>
+          </div>
+        </div>
+        <p class="muted lang-en">Academic &amp; professional service</p>
+        <ul>
+          <li class="lang-en">
+            Member, Hydrological Geophysics Committee, Chinese Geophysical Society.
+          </li>
+          <li class="lang-en">
+            Expert member, China Coal Research Institute expert pool.
+          </li>
+          <li class="lang-en">
+            R&amp;D and evaluation expert, Department of Science and Technology of Shandong Province.
+          </li>
+          <li class="lang-en">
+            Reviewer for journals including <em>Mine Water and the Environment</em>, <em>Journal of Hydrology</em>,
+            <em>Hydrogeology Journal</em>, <em>Emerging Materials Research</em>,
+            <em>Rock Mechanics and Rock Engineering</em>, and <em>Environmental Earth Sciences</em>.
+          </li>
+
+          <li class="lang-zh">
+            中国地球物理学会水文地球物理专业委员会委员；
+          </li>
+          <li class="lang-zh">
+            中国煤炭科学研究总院（煤炭行业）专家库成员；
+          </li>
+          <li class="lang-zh">
+            山东省科技厅技术研发专家、山东省重点研发计划评审专家库成员；
+          </li>
+          <li class="lang-zh">
+            《Mine Water and the Environment》《Journal of Hydrology》《Hydrogeology Journal》
+            《Emerging Materials Research》《Rock Mechanics and Rock Engineering》《Environmental Earth Sciences》等期刊审稿人。
+          </li>
+        </ul>
+
+        <p class="muted lang-en">Awards</p>
+        <ul>
+          <li class="lang-en">
+            Science and Technology Progress Award of China Association of Work Safety, 2020 (national level).
+          </li>
+          <li class="lang-zh">
+            《中国安全生产协会科技进步奖》，国家级，证书编号：2020-3-319-R04。
+          </li>
+        </ul>
+      </article>
+
+      <!-- Patents & Books -->
+      <article class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-title-dot"></span>
+            <span class="lang-en">Patents, Software &amp; Books</span>
+            <span class="lang-zh">专利 · 软件著作 · 著作教材</span>
+          </div>
+        </div>
+
+        <p class="muted lang-en">Authorized invention patents</p>
+        <ul>
+          <li class="lang-en">
+            Dynamic monitoring method for spatio-temporal evolution of floor rock fracture distribution in deep coal mining
+            (CN202111129836.8, Nanjing Tech University).
+          </li>
+          <li class="lang-en">
+            Construction method for vertical shaft excavation through hundred-meter-thick structural fractured strata
+            (CN202210417823.9, Nanjing Tech University).
+          </li>
+          <li class="lang-en">
+            Evaluation method for prevention and control effect of karst water hazards in deep mining
+            (CN114757561B, Nanjing Tech University).
+          </li>
+          <li class="lang-en">
+            Prediction method for development height of water-conducting fracture zone
+            (CN201810460816.0, China University of Mining and Technology).
+          </li>
+        </ul>
+
+        <p class="muted lang-zh">授权发明专利：</p>
+        <ul class="lang-zh">
+          <li>深部煤层开采底板岩层破裂分布时空演化动态监测方法（CN202111129836.8，南京工业大学）。</li>
+          <li>立井施工穿越百米级构造破碎带地层的施工方法（CN202210417823.9，南京工业大学）。</li>
+          <li>一种针对深部开采岩溶水害防治效果评价的方法（CN114757561 B，南京工业大学）。</li>
+          <li>一种导水裂缝带发育高度预计方法（CN201810460816.0，中国矿业大学）。</li>
+        </ul>
+
+        <p class="muted lang-en">Software copyright</p>
+        <ul>
+          <li class="lang-en">
+            In-situ Testing – Standard Penetration Test Virtual Simulation Software V1.0
+            (Registration No. 2024SR0832633).
+          </li>
+        </ul>
+        <p class="muted lang-zh">软件著作：</p>
+        <ul class="lang-zh">
+          <li>原位测试之标准贯入虚拟仿真实验软件 V1.0（登记号：2024SR0832633）。</li>
+        </ul>
+
+        <p class="muted lang-en">Books &amp; textbooks</p>
+        <ul>
+          <li class="lang-en">
+            Hu, Y.B. 2022. <em>Mechanism and Control Technology of Confined Water Hazards in Deep Coal Seam Mining</em>.
+            China Petrochemical Press, Beijing. (in Chinese)
+          </li>
+          <li class="lang-en">
+            Co-author of textbook <em>Engineering Geology (5th Edition)</em>,
+            Civil Engineering Series for Colleges and Universities, Wuhan University of Technology Press, 2024.
+          </li>
+        </ul>
+        <p class="muted lang-zh">教材与著作：</p>
+        <ul class="lang-zh">
+          <li>《深部煤层开采承压水害致灾机理及防治技术》，中国石化出版社，2022。</li>
+          <li>参编教材《工程地质》第 5 版，普通高等学校土木工程专业新编系列教材，武汉理工大学出版社，2024。</li>
+        </ul>
+      </article>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Yanbo Hu · Hosted on GitHub Pages
+    <div>© 2025 Yanbo Hu · Nanjing Tech University</div>
+    <div>Hosted on <a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a></div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // language switcher
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var target = btn.dataset.langTarget;
+        document.documentElement.setAttribute("data-lang", target);
+        document.documentElement.setAttribute("lang", target === "en" ? "en" : "zh-CN");
+        document.querySelectorAll(".lang-btn").forEach(function (b) {
+          b.classList.toggle("active", b === btn);
+        });
+      });
+    });
   </script>
 </body>
 </html>

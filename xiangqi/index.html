@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>中国象棋 - 人机对战</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="title">中国象棋 · Xiangqi</div>
+        <div class="subtitle">离线人机对战 · Canvas 渲染</div>
+      </header>
+      <main class="layout">
+        <section class="board-panel">
+          <canvas id="board" width="560" height="620" aria-label="Xiangqi Board"></canvas>
+          <div id="status" class="status">准备开始</div>
+        </section>
+        <aside class="side-panel">
+          <div class="control-group">
+            <label class="control-label" for="difficulty">AI 难度</label>
+            <select id="difficulty" class="control-select">
+              <option value="easy">初级</option>
+              <option value="medium" selected>中级</option>
+              <option value="hard">高阶</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="playerSide">玩家执子</label>
+            <select id="playerSide" class="control-select">
+              <option value="red" selected>红方（先手）</option>
+              <option value="black">黑方（后手）</option>
+            </select>
+          </div>
+          <div class="control-group buttons">
+            <button id="newGame" class="btn primary">新开局</button>
+            <button id="undo" class="btn">悔棋</button>
+            <button id="swap" class="btn">交换先后手</button>
+            <button id="resign" class="btn warn">认输</button>
+          </div>
+          <div class="control-group">
+            <label class="control-label">背景音乐</label>
+            <div class="music-controls">
+              <button id="musicToggle" class="btn">开启音乐</button>
+              <input
+                id="musicVolume"
+                class="control-range"
+                type="range"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.35"
+              />
+            </div>
+            <div id="musicStatus" class="music-status">默认关闭（点击启用）</div>
+          </div>
+          <div class="tips">
+            <div class="tips-title">操作提示</div>
+            <ul>
+              <li>点击棋子选中，再点击落点走子。</li>
+              <li>高亮圆点为可行走位置。</li>
+              <li>AI 思考中会显示“思考中…”。</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="engine/board.js"></script>
+    <script src="engine/movegen.js"></script>
+    <script src="engine/rules.js"></script>
+    <script src="audio/music.js"></script>
+    <script src="ai/evaluate.js"></script>
+    <script src="ai/search.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

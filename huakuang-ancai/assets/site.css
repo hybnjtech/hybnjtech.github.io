@@ -32,4 +32,37 @@
 @media(max-width:760px){.photo-catalogue-grid{grid-template-columns:1fr 1fr;gap:25px 20px}.gallery-photo-credits{gap:10px}.gallery-photo-credits .photo-credit{font-size:8px}.hero-caption .photo-credit{font-size:8px}.hero-caption{right:14px;bottom:9px}.photo-catalogue h3{font-size:11px}.photo-catalogue figcaption>span,.photo-catalogue a{font-size:9px}.journal-story.featured-story .brief-card-shell>.photo-credit{margin-top:-16px}}
 .directory-hero-inner>div,.journal-title-row>div,.journal-story .brief-copy{min-width:0}.directory-hero h1{overflow-wrap:break-word}.directory-index strong{min-width:0}.coal-company{min-width:0}.photo-credit{overflow-wrap:anywhere}
 
+/* Expert pages: complete CJK font coverage and a quieter academic hierarchy. */
+.expert-directory-page,.personal-site{font-family:HKASans,"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-synthesis:none}
+.expert-directory-page .page-heading h1,.personal-site h1,.personal-site h2,.personal-site h3,.personal-site .personal-quote{font-family:inherit}
+.expert-directory-page .page-heading{background:#f4f5f0;padding-top:38px;padding-bottom:62px}
+.expert-directory-page .page-heading h1{font-size:clamp(38px,4.6vw,62px);font-weight:600;line-height:1.35;letter-spacing:.045em;margin:23px 0 24px}
+.expert-directory-page .page-heading p{font-size:15px;line-height:1.9;letter-spacing:.025em;max-width:610px;color:#687e85}
+.expert-directory-page .person-card h3{font-family:inherit;font-size:27px;font-weight:600;line-height:1.5;letter-spacing:.035em;margin-top:15px}
+.expert-directory-page .person-card p{font-size:13px;line-height:1.9;color:#627a80}
+.expert-directory-page .person-card>img{object-fit:cover;object-position:center 30%}
+.expert-directory-page .join-card h3,.expert-directory-page .network-welcome h2{font-family:inherit;font-weight:500;letter-spacing:.025em;line-height:1.5}
+.personal-site{color:#29483f}
+.personal-masthead{padding-top:42px}
+.personal-masthead h1{font-size:clamp(36px,4.5vw,56px);font-weight:600;letter-spacing:.08em;line-height:1.4;margin:16px 0 12px}
+.personal-english{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.17em}
+.personal-subline{font-size:13px;line-height:1.8;letter-spacing:.015em}
+.personal-masthead nav{font-size:12px;gap:18px 30px}
+.personal-hero{gap:64px;grid-template-columns:1.05fr 1fr}
+.personal-intro h2{font-size:clamp(27px,3.1vw,39px);font-weight:500;line-height:1.65;letter-spacing:.025em;text-wrap:pretty;margin:21px 0 26px}
+.personal-shortbio{font-size:15px;line-height:2.05;color:#5d7570}
+.personal-quote{font-size:clamp(21px,2.4vw,28px);font-weight:400;line-height:1.9;letter-spacing:.035em;max-width:960px;margin:auto}
+.personal-section{grid-template-columns:220px 1fr;gap:60px}
+.personal-section-head h2{font-size:25px;font-weight:500;line-height:1.5;letter-spacing:.015em;margin-top:12px}
+.personal-section .prose{font-size:15px;line-height:2.05;color:#526e67}
+.personal-section .bio-prose{font-size:16px;line-height:2.15}
+.personal-topics h3,.profile-entry h3{font-size:20px;font-weight:500;line-height:1.65;letter-spacing:0}
+.papers .profile-entry h3{font-size:18px;line-height:1.7}
+.profile-entry p,.entry-role,.entry-venue{font-size:13px;line-height:1.9}
+.personal-contact h2{font-size:30px;font-weight:500;letter-spacing:.025em;line-height:1.5}
+@media(max-width:960px){.personal-hero{gap:35px}.personal-section{grid-template-columns:180px 1fr;gap:30px}}
+@media(max-width:640px){.expert-directory-page .page-heading{padding-top:24px;padding-bottom:36px}.expert-directory-page .page-heading h1{font-size:38px;letter-spacing:.035em;margin:20px 0}.expert-directory-page .page-heading p{font-size:13px;line-height:1.95}.expert-directory-page .person-card h3{font-size:26px}.personal-masthead h1{font-size:38px;letter-spacing:.075em}.personal-subline{font-size:11px}.personal-masthead nav{font-size:11px;gap:14px 20px}.personal-intro h2{font-size:28px;line-height:1.65;letter-spacing:.015em}.personal-shortbio{font-size:14px;line-height:2}.personal-section{display:block}.personal-section-head h2{font-size:24px}.personal-section .prose,.personal-section .bio-prose{font-size:14px;line-height:2.05}.personal-quote{font-size:21px;line-height:1.85;letter-spacing:.025em}.personal-contact h2{font-size:26px}.personal-topics h3{font-size:18px}}
+
+.personal-intro h2 .headline-phrase{display:inline-block;max-width:100%;vertical-align:top}
+
 .mirror-status{display:flex;justify-content:space-between;gap:18px;padding:15px 4%;font:11px/1.8 Arial,sans-serif;background:#edf3ee;color:#567564}.mirror-status a{text-decoration:underline}.mirror-status span{font-size:10px}.mirror-language-links{display:flex;gap:15px}.mirror-hidden{display:none!important}@media(max-width:640px){.mirror-status{flex-direction:column;gap:5px}}

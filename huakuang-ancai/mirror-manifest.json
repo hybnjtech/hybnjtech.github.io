@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T12:46:24.832088+00:00",
+  "generatedAt": "2026-11-04T22:10:46.117Z",
   "source": "https://huakuang-ancai.singlefort2.chatgpt.site",
-  "sourceCommit": "72d2d91076716fb8b2a019f8a7853bc3b9a8f157",
+  "sourceCommit": "58fb5beb1157b55fc8bb8cb3dee569cb404442a9",
   "pages": 72,
   "languages": [
     "zh",
@@ -13,5 +13,6 @@
   "publishedExperts": 1,
   "publishedArticles": 4,
   "privateDataIncluded": false,
-  "publicExpertPhotos": "Served from the main website so withdrawal can revoke image access."
+  "publishedExpertImages": 2,
+  "publicExpertPhotos": "Published portraits and covers are local static copies. Sync after updates or withdrawal to remove obsolete copies."
 }
